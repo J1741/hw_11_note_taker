@@ -12,6 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// middleware needed to apply stylesheet to html
+app.use(express.static(__dirname + '/public'));
+
 // html route for landing page
 app.get('/', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);

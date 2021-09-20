@@ -18,18 +18,19 @@ app.use(express.static(__dirname + '/public'));
 // html routes
 app.get('/', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.get('/notes', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
-  res.sendFile(path.join(__dirname, './public/notes.html'));
+  res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-app.get('*', (req, res) => {
-  console.log('\n**** Route hit ****\n', req.route);
-  res.sendFile(path.join((__dirname, './public')));
-});
+// Commenting out generic route, as it returns a Type error
+// app.get('*', (req, res) => {
+//   console.log('\n**** Route hit ****\n', req.route);
+//   res.sendFile(path.join((__dirname, '/public/index.html')));
+// });
 
 app.listen(PORT, () =>
   console.log(`######## Now listening at http://localhost:${PORT} ☕️ ########`)

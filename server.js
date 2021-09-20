@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 // html route for landing page
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
   res.sendFile(path.join(__dirname, './public/index.html'));
 });

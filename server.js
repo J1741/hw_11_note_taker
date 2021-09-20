@@ -12,11 +12,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// middleware needed to apply stylesheet to html
+// middleware needed to apply stylesheet to notes.html
 app.use(express.static(__dirname + '/public'));
 
-// html route for landing page
-app.get('*', (req, res) => {
+// general html route for landing page
+app.get('/', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
@@ -27,5 +27,5 @@ app.get('/notes', (req, res) => {
 })
 
 app.listen(PORT, () =>
-  console.log(`################ Now listening at http://localhost:${PORT} ################`)
+  console.log(`######## Now listening at http://localhost:${PORT} ☕️ ########`)
 );

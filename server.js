@@ -12,10 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// middleware needed to apply stylesheet to notes.html
+// middleware needed to apply stylesheet and access frontend javascript
 app.use(express.static(__dirname + '/public'));
 
-// general html route for landing page
+// html routes
 app.get('/', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
   res.sendFile(path.join(__dirname, './public/index.html'));
@@ -24,7 +24,12 @@ app.get('/', (req, res) => {
 app.get('/notes', (req, res) => {
   console.log('\n**** Route hit ****\n', req.route);
   res.sendFile(path.join(__dirname, './public/notes.html'));
-})
+});
+
+app.get('*', (req, res) => {
+  console.log('\n**** Route hit ****\n', req.route);
+  res.sendFile(path.join((__dirname, './public')));
+});
 
 app.listen(PORT, () =>
   console.log(`######## Now listening at http://localhost:${PORT} ☕️ ########`)

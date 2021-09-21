@@ -1,10 +1,22 @@
-const express = require('express');
+const router = require('express').Router();
+const path = require('path');
 
-// import modular router for notes
-const notesRouter = require('./notes');
+// GET route for homepage 
+router.get('/', (req, res) => {
+  console.log('\n**** Route hit ****\n', req.route);
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
-const app = express();
+// GET route for notes page
+router.get('/notes', (req, res) => {
+  console.log('\n**** Route hit ****\n', req.route);
+  res.sendFile(path.join(__dirname, '../public/notes.html'));
+});
 
-app.use('/notes', notesRouter);
+// handle non-existent routes 
+router.get('*', (req, res) => {
+  console.log('\n**** Route hit ****\n', req.route);
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
-module.exports = app;
+module.exports = router;

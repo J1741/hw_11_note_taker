@@ -26,11 +26,11 @@ app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-// Commenting out generic route, as it returns a Type error
-// app.get('*', (req, res) => {
-//   console.log('\n**** Route hit ****\n', req.route);
-//   res.sendFile(path.join((__dirname, '/public/index.html')));
-// });
+// handling non-existent routes 
+app.get('*', (req, res) => {
+  console.log('\n**** Route hit ****\n', req.route);
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 app.listen(PORT, () =>
   console.log(`######## Now listening at http://localhost:${PORT} ☕️ ########`)

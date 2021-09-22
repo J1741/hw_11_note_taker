@@ -1,6 +1,6 @@
 const express = require('express');
-const homeRoutes = require('./routes/index.js');
-const apiRoutes = require('./routes/api/index.js');
+const path = require('path');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3001;
 
@@ -11,11 +11,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // middleware to access stylesheet and frontend javascript
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 
 // middleware for routes
-app.use('/', homeRoutes);
-app.use('/api', apiRoutes);
+app.use('/', routes);
 
 app.listen(PORT, () =>
   console.log(`******** Now listening at http://localhost:${PORT} ☕️ ********`));

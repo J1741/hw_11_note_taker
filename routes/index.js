@@ -17,9 +17,9 @@ router.get('/notes', (req, res) => {
 });
 
 // handle non-existent routes 
-// router.get('*', (req, res) => {
-//   console.log('\n**** Generic route hit ****\n', req.route);
-//   res.sendFile(path.join(__dirname, '../public/index.html'));
-// });
+router.get('*', (req, res) => {
+  console.log('\n**** Generic route hit ****\n', req.route);
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 module.exports = router;

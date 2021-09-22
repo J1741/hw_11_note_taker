@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // middleware to access stylesheet and frontend javascript
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
 
 // middleware for routes
 app.use('/', routes);

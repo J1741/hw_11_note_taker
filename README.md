@@ -10,10 +10,7 @@ Express Note Taker is a full-stack web application that allows the user to write
 - [Tests](#tests)
 - [Questions](#questions)
 
-## Deployed Application
-The Express Note Taker application is deployed on Heroku and can be accessed at #TBD
-
-## Local Installation
+## Installation
 To install the Express Note Taker locally, follow the steps below.
 
 ### Requirements
@@ -58,3 +55,12 @@ Future development of the Express Note Taker will add the ability to delete note
 Questions and inquiries about the Express Note Taker project can be directed to the developer via GitHub: https://github.com/J1741
 
 Or via email: jseventeen41@gmail.com
+
+# Deployed Application
+
+## Link to Deployed Application
+The live password generator can be accessed at the following link: ##TBD
+
+## Screenshot of Deployed Application
+The following screenshot of the deployed application illustrates the results of the password generator project: 
+![Alt text](./screenshot.png?raw=true "Screenshot Of Express Note Taker")
